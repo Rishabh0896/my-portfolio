@@ -4,6 +4,7 @@ import BackgroundCircles from "@/components/BackgroundCircles";
 import Image from "next/image";
 import Link from "next/link";
 import {PageInfo} from "@/typings";
+import {urlFor} from "@/sanity";
 type Props = {
     pageInfo : PageInfo
 }
@@ -20,11 +21,11 @@ export default function Hero({pageInfo}: Props) {
             <BackgroundCircles />
             <img
                 className= "relative rounded-full h-40 w-40 mx-auto object-cover"
-                src="/Image_About.jpg"
+                src={urlFor(pageInfo? pageInfo.heroImage: "").url()}
                 alt="My Image"
             />
             <div className="z-20">
-                <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">Software Engineer</h2>
+                <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">{pageInfo?.role}</h2>
                 <h1 className="text-5xl lg:text-6xl font-semibold px-10">
                     <span className="mr-3">{text}</span>
                     <Cursor cursorColor="#F7AB0A"/>

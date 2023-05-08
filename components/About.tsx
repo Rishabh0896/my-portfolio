@@ -1,8 +1,12 @@
 import React from "react";
 import {motion,useScroll} from "framer-motion";
-type Props = {}
+import {PageInfo} from "@/typings";
+import {urlFor} from "@/sanity";
+type Props = {
+    pageInfo : PageInfo
+}
 
-export default function About({}: Props) {
+export default function About({pageInfo}: Props) {
     const { scrollYProgress } = useScroll();
     return (
         <motion.div
@@ -28,7 +32,7 @@ export default function About({}: Props) {
                 }}
                 whileInView={{ x:0 , opacity:1}}
                 viewport={{once: true}}
-                src="\Image_Hero.jpg"
+                src={urlFor(pageInfo? pageInfo.profilePic: "").url()}
                 className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
                 md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[450px]"
             />
@@ -38,11 +42,7 @@ export default function About({}: Props) {
                 {/*</h4>*/}
             </div>
             <p className="text-base">
-                Somewhere between designing CAD models and restarting my laptop to fix memory issues, I entered the realm of debugging code. I embarked on a journey of self-learning Java, which was a pivotal moment in my life. My venture into programming opened new doors of opportunities, and to my realization, it felt like a calling.
-
-                After accumulating invaluable industry experience, I realized that formal education could take my skills to the next level. I enrolled in the Master's Program, which has enabled me to pursue my passion for Computer Science with vigour and enthusiasm.
-
-                As I embark on my journey to become an adept software developer, I am grateful for the skills I have acquired and the unique perspective I bring to this field. I relentlessly seek new challenges and opportunities to push myself further and positively impact the tech industry.
+                {pageInfo?.backgroundInformation}
             </p>
             <div className="w-full absolute top-[20%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12">
             </div>
