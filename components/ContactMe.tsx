@@ -24,22 +24,22 @@ export default function ContactMe({}:Props) {
                 ContactMe
             </h3>
             <div className="flex flex-col space-y-10">
-                <h4 className="text-4xl font-semibold text-center">
-                    I have got just what you need.{" "}
-                    <span className="decoration-[#F7AB0A]/50 underline"> Lets Talk.</span>
-                </h4>
+                {/*<h4 className="text-4xl font-semibold text-center">*/}
+                {/*    I have got just what you need.{" "}*/}
+                {/*    <span className="decoration-[#F7AB0A]/50 underline"> Lets Talk.</span>*/}
+                {/*</h4>*/}
                 <div className = "space-y-10">
-                    <div className="flex items-center space-x-5">
-                        <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse"/>
-                        <p className="text-2xl">+2019899952</p>
-                    </div>
+                    {/*<div className="flex items-center space-x-5">*/}
+                    {/*    <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse"/>*/}
+                    {/*    <p className="text-2xl">+2019899952</p>*/}
+                    {/*</div>*/}
                     <div className="flex items-center space-x-5">
                         <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse"/>
                         <p className="text-2xl">rishabhdinesh.gupta@outlook.com</p>
                     </div>
                     <div className="flex items-center space-x-5">
                         <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse"/>
-                        <p className="text-2xl">11 Scottfield Rd, Apt No.2, Boston, MA</p>
+                        <p className="text-2xl">Boston, MA</p>
                     </div>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto">

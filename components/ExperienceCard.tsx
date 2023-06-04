@@ -7,7 +7,7 @@ type Props = {
 }
 export default function ExperienceCard({experience}: Props) {
     return (
-        <article className="flex flex-col rounded-lg items-center space-y-5 flex-shrink-0 w-[500px]
+        <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px]
         md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer
         transition-opacity duration-200 overflow-hidden">
             <motion.img
@@ -22,13 +22,13 @@ export default function ExperienceCard({experience}: Props) {
                     opacity:1 ,y:0
                 }}
                 viewport={{ once : true}}
-                className="w-20 h-20 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+                className="w-20 h-20 rounded-full xl:w-[120px] xl:h-[120px] object-contain object-center"
                 src={urlFor(experience?.companyImage).url()}
                 alt="Oracle_Logo"
             />
-            <div className="px-0 md:px-10">
-                <h4 className="text-2xl font-light">Associate Consultant</h4>
-                <p className="font-bold text-2xl mt-1">{experience?.company}</p>
+            <div className="px-0 md:px-10 xl:px-20">
+                <h4 className="text-xl font-light">{experience?.jobTitle}</h4>
+                <p className="font-bold text-xl mt-1">{experience?.company}</p>
                 <div className="flex space-x-2 my-2">
                     {experience.technologies.map((technology) => (
                         <img
@@ -41,7 +41,7 @@ export default function ExperienceCard({experience}: Props) {
                 <p>{new Date(experience?.dateStarted).toDateString()} - {" "}
                     {experience.isCurrentlyWorkingHere? "Present" :
                         new Date(experience?.dateEnded).toDateString()}</p>
-                <ul className="list-disc space-y-4 ml-5 text-lg max-h-96 pr-5 overflow-y-scroll scrollbar-thin
+                <ul className="list-disc space-y-3 ml-5 text-lg max-h-96 pr-5 overflow-y-scroll scrollbar-thin
                 scrollbar-track-black scrollbar=thumb-[#F7AB0A]/80">
                     {experience.points.map((point, i) => (
                         <li key={i}>
